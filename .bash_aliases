@@ -104,6 +104,16 @@ incognito() {
   esac
 }
 
+### cdi: directory specific bash aliases
+cdi() {
+    cd "$1";
+    if [ -f ./.bash_local ]; then
+        source ./.bash_local;
+    else
+        source ~/.bashrc;
+    fi
+}
+
 ### gpom: simplistic git push origin master alias.
 alias gpom="git push origin master"
 
